@@ -1,10 +1,10 @@
 <?php
 
-class IserNotFoundException extends DomainException
+class UserNotFoundException extends DomainException
   {
      public static function becauseIdWasFound($id)
       {
-          return new self('no se encontró un usuario con el ID:'.$id);
+          return new self('no se encontró un usuario con el ID:'. $id);
      
        }
 }

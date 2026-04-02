@@ -1,10 +1,10 @@
 <?php
 
-class InvalidUserIdExceptions extends InvalidArgumentException
+ class InvalidUserIdException extends InvalidArgumentException
 {
   public static function becauseValuesIsEmpty()
   {
-    return new self('EL Id del uuario  no puede estar vacio.');
+  return new self('EL Id del usuario  no puede estar vacio.');
   } 
 
 }
