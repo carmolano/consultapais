@@ -1,6 +1,6 @@
 <?php
 
-class InvalidUserPasswordExeption extends InvalidArgumentException
+class InvalidUserPasswordException extends InvalidArgumentException
   {
     public static function becauseValuesIsEmpty()
       {
@@ -8,7 +8,7 @@ class InvalidUserPasswordExeption extends InvalidArgumentException
       }
       public static function becauseLengthIsTooShort($min)
       {
-        return new self('el email del uuario no puee estar vacio.');
+        return new self('la contraseña debe tener al menos '  . $min. ' 12 caracteres');
       }
 
   }
