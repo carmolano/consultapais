@@ -4,11 +4,11 @@
 declare(stric_type=1);
 
 
+
 final class Conecction
 
-final class Connection
-
 {
+
    private string $host;
    private int    $port;
    private string $database;
@@ -18,24 +18,27 @@ final class Connection
 
 
    public function ____construct(
-       
-       string $host,
-       int    $port,
-       string $database,
-       string $username,
-       string $password,
+       string $host, 
+       int $port, 
+       string $database, 
+       string $username, 
+       string $password, 
        string $charset = 'utf8mb4'
+       
+       
+    ){
 
-   ) {
-         $this ->host     =$ host;
-         $this ->port     =$ port;
-         $this ->database =$ databases;
-         $this ->password =$ password;
-         $this ->charset   =$charset;
+    $this->host    = $host;
+    $this->port    = $port;
+    $this->database = $database;
+    $this->username = $username;
+    $this->password = $password;
+    $this->charset = $charset;
+
+  }
 
 
 
-   }
  public function createpdo(): PDO
   {
     $dsn = sprintf(
@@ -50,7 +53,7 @@ final class Connection
 
 
     return new PDO(
-        $dns,
+        $dsn,
         $this->username,
         $this->password,
         array(
