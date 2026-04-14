@@ -1,0 +1,74 @@
+<?php
+
+
+declare(stric_type=1);
+
+
+final class Conecction
+
+final class Connection
+
+{
+   private string $host;
+   private int    $port;
+   private string $database;
+   private string $username;
+   private string $password;
+   private string $charset;
+
+
+   public function ____construct(
+       
+       string $host,
+       int    $port,
+       string $database,
+       string $username,
+       string $password,
+       string $charset = 'utf8mb4'
+
+   ) {
+         $this ->host     =$ host;
+         $this ->port     =$ port;
+         $this ->database =$ databases;
+         $this ->password =$ password;
+         $this ->charset   =$charset;
+
+
+
+   }
+ public function createpdo(): PDO
+  {
+    $dsn = sprintf(
+        'mysql:host=%s;port=%d;dbname=%;charset=%s',
+        $this->host,
+        $this->port,
+        $this->database,
+        $this->charset
+
+
+    );
+
+
+    return new PDO(
+        $dns,
+        $this->username,
+        $this->password,
+        array(
+            PDO::ATTR_ERRMODE                       =>  PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE            =>PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES              => false,
+        
+
+
+
+
+        )
+
+
+
+    );
+
+  }
+
+}
+
