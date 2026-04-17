@@ -7,6 +7,7 @@ require_once __DIR__ . '/../Ports/Out/UpdateUserPort.php';
 require_once __DIR__ . '/../Ports/Out/GetUserByIdPort.php'; 
 require_once __DIR__ . '/../Ports/Out/GetUserByEmailPort.php'; 
 require_once __DIR__ . '/Mappers/UserApplicationMapper.php'; 
+
 require_once __DIR__ . '/../../Domain/Exceptions/UserAlreadyExistsException.php'; 
 require_once __DIR__ . '/../../Domain/Exceptions/UserNotFoundException.php'; 
 require_once __DIR__ . '/../../Domain/ValueObjects/UserId.php'; 
@@ -16,20 +17,22 @@ require_once __DIR__ . '/../../Domain/ValueObjects/UserEmail.php';
 
 
 final class UpdateUserService implements UpdateUserUseCase
+
 {
-    private UpdateUserPort $update_user_port;
+    private UpdateUserPort $updateUserPort;
     private GetUserByIdPort $getUserByIdPort;
-    private GetUserByEmailPort $getUserByIdPort;
+    private GetUserByEmailPort $getUserByEmailPort;
 
 
     public function __construct(
         UpdateUserPort $updateUserPort,
-        GetUserByIdOirt $getUserByIdPort
+        GetUserByIdPort $getUserByIdPort,
+        GetUserByEmailPort $getUserByEmailPort
 
 
     )  {
-            $this->updateUserPort      =  $update_user_port;
-            $this->getUserByIdPort     =  $getUserByIdPort;
+            $this->updateUserPort = $updateUserPort;
+            $this->getUserByIdPort = $getUserByIdPort;
             $this->getUserByEmailPort  =  $getUserByEmailPort;
 
 
@@ -48,9 +51,9 @@ final class UpdateUserService implements UpdateUserUseCase
               }
 
                   $newEmail             =  new UserEmail($command->getEmail());
-                  $userWithSaneEmail      = $this->getUserByEmailPort->getByEmail($newEmail);
+                  $userWithSameEmail      = $this->getUserByEmailPort->getByEmail($newEmail);
 
-                  if ($userWithSameEmail !== null && !$userWithSameEmail->id()->equals($userId)) { 
+                  if ($userWithSameEmail !== null && !$userWithSameEmail->id()->equals($userId)) {
                     throw UserAlreadyExistsException::becauseEmailAlreadyExists($newEmail->value());
 
                   }
