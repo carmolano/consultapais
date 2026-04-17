@@ -5,7 +5,7 @@ declare(stric_type=1);
 
 
 
-final class Conecction
+final class Connection
 
 {
 

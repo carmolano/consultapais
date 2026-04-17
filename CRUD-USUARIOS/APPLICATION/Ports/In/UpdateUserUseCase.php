@@ -9,5 +9,5 @@ require_once __DIR__ . '/../../../Domain/Models/UserModel.php';
 
 interface UpdateUserUseCase
 {
-    public function xecute(UpdateUserCommand $command): UserModel;
+    public function execute(UpdateUserCommand $command): UserModel;
 }
