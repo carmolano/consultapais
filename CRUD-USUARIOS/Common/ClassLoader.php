@@ -56,23 +56,23 @@ final class ClassLoader
   'GetUserByIdService' => 'Application/Services/GetUserByIdService.php', 
   'GetAllUsersService' => 'Application/Services/GetAllUsersService.php', 
 
- 'Connection' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Config/Connection.php', 
- 'UserPersistenceDto' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php', 
- 'UserEntity' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Entity/UserEntity.php', 
- 'UserPersistenceMapper' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php', 'UserRepositoryMySQL' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php', 
+ 'Connection' => 'Infraestructure/Adapters/Persistence/MySQL/Config/Connection.php', 
+ 'UserPersistenceDto' => '  Infraestructure/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php', 
+ 'UserEntity' => 'Infraestructure/Adapters/Persistence/MySQL/Entity/UserEntity.php', 
+ 'UserPersistenceMapper' => 'Infraesructure/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php', 'UserRepositoryMySQL' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php', 
 
 
- 'CreateUserWebRequest' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
- 'UpdateUserWebRequest' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Dto/UpdateUserRequest.php', 
- 'UserResponse' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Dto/UserResponse.php', 
- 'UserWebMapper' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Mapper/UserWebMapper.php', 
- 'UserController' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/UserController.php', 
- 'WebRoutes' => 'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Config/WebRoutes.php',
+ 'CreateUserWebRequest' => 'Infraestructure/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
+ 'UpdateUserWebRequest' => 'Infraestructure/Entrypoints/Web/Controllers/Dto/UpdateUserRequest.php', 
+ 'UserResponse' => 'IInfraestructure/Entrypoints/Web/Controllers/Dto/UserResponse.php', 
+ 'UserWebMapper' => 'Infraestructure/Entrypoints/Web/Controllers/Mapper/UserWebMapper.php', 
+ 'UserController' => 'Infraestructure/Entrypoints/Web/Controllers/UserController.php', 
+ 'WebRoutes' => 'Infraestructure/Entrypoints/Web/Controllers/Config/WebRoutes.php',
 
 
 
-'View' => 'INFRAESTRUCTURE/Entrypoints/Web/Presentation/View.php', 
-'Flash' => 'INFRAESTRUCTURE/Entrypoints/Web/Presentation/Flash.php', 
+'View' => 'Infraestructure/Entrypoints/Web/Presentation/View.php', 
+'Flash' => 'Infraestructure/Entrypoints/Web/Presentation/Flash.php', 
 
  'DependencyInjection' => 'Common/DependencyInjection.php',
  'PaisModel' => 'Pais/Domain/Models/PaisModel.php',

@@ -20,11 +20,17 @@ final class View
  
  
  
- $file = __DIR__ . '/Views/' . $template . '.php';
+$baseDir = __DIR__ . '/Views/';
+
+ $file = $baseDir . $template . '.php'; 
+
 
 
         if (!file_exists($file)) {
- throw new RuntimeException('Vista no encontrada: ' . $template);
+            $file = $baseDir . 'Layouts/' . $template . '.php';
+            if (!file_exists($file)) {
+                throw new RuntimeException('Vista no encontrada: ' . $template);
+            }
 
 
 
@@ -34,9 +40,5 @@ final class View
  }
 
 
-       public static function redirect(string $route): void
- {
-     header('Location: ?route=' . urlencode($route));
-      exit;
- }
+    
 }

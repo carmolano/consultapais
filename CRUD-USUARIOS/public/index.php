@@ -184,9 +184,11 @@ case 'login':
 )); 
 break; 
 
-Flash::setSuccess('Bienvenido/a, ' . $user->name()->value() . '.'); 
-View::redirect('home'); 
-break; 
+case 'authenticate':
+    // Código de autenticación aquí
+    // Por ahora, redirigir a home
+    View::redirect('home');
+    break;
 
 case 'logout': 
       session_destroy(); 
