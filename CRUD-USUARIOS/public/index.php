@@ -254,8 +254,8 @@ if ($forgotEmail === '' || !filter_var($forgotEmail, FILTER_VALIDATE_EMAIL)) {
 
        case 'auth.authenticate': 
             Flash::setOld(array('email' => trim(strtolower((string) ($_POST['email'] ?? ''))))); 
-            View::redirect('auth.login'); 
-            break; 
+            header('Location: index.php?route=home');
+            exit; 
 
     case 'auth.forgot.send': 
            Flash::setOld(array('email' => trim((string) ($_POST['email'] ?? '')))); 

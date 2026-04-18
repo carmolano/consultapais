@@ -7,7 +7,7 @@ final class Country
     public function __construct(
         public string $nombre,
         public string $presidente,
-        public string$continente,
+        public string $continente,
         public string $nombreHimno,
         public int $numeroHabitantes,
         public int $numDepartamentos,

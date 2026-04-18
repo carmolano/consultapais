@@ -10,5 +10,5 @@ require_once __DIR__ . '/../../../Domain/Models/UserModel.php';
 interface CreateCountryUserUseCase
 
 {
-    public function execute(CreateCountryUserUseCase $command): UserModel;
+    public function execute(CreateUserCommand $command): UserModel;
 }
