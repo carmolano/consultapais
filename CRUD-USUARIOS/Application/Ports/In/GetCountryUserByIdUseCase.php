@@ -7,9 +7,9 @@ require_once __DIR__ . '/../../Services/Dto/Queries/GetUserByIdQuery.php';
 require_once __DIR__ . '/../../../Domain/Models/UserModel.php';
 
 
-interface GetUserByIdUseCase
+interface GetCountryUserByIdUseCase
 
 {
-    public function execute(GetUserByIdQuery $query): UserModel;
+    public function execute(GetCountryUserByIdUseCase $query): UserModel;
     
 }
