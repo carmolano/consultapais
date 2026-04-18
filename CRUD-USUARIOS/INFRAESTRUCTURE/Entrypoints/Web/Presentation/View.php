@@ -16,13 +16,14 @@ final class View
 
          { 
 
-             $file = __DIR__ . '/Views/' . $template . '.php'; 
+             $file = __DIR__ . '/ ' . $template . '.php'; 
 
 
               if (!file_exists($file)) { 
                   throw new RuntimeException('Vista no encontrada: ' . $template); 
 
-             } extract($data, EXTR_SKIP); 
+             } 
+                extract($data, EXTR_SKIP); 
                require $file; 
 
 
@@ -33,8 +34,8 @@ final class View
                { 
 
 
-                     header('Location: ?route=' . urlencode($route)); 
-                      exit; 
+                  header('Location: ?route=' . urlencode($route)); 
+                  exit; 
 
 
    } 

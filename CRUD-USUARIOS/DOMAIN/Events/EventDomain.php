@@ -3,16 +3,16 @@
 abstract class DomainEvent
 
 {
-    private $eventName;
+    private $eventname;
     private $occurredOn;
 
-    public function __construct($eventName)
+    public function __construct($eventname)
     {
-        $this->eventName = $eventName;
+        $this->eventname = $eventname;
         $this->occurredOn = date('y-m-d h:is');
     }
 
-    public function eventName() {return $this->eventName;}
+    public function eventname() {return $this->eventname;}
     public function occurredOn(){return $this->occurredOn;}
 
     abstract public function payload();
