@@ -3,7 +3,7 @@
 
 <div class="container">
     <h1>Agregar País</h1>
-    <p>Completa los datos para registrar un nuevo país.</p>
+    <p>escribe los datos para agregar el pais que quieres .</p>
 
     <?php if (!empty($message)): ?>
         <div class="alert-success"><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></div>
@@ -32,7 +32,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Agregar País</button>
-        <a href="?route=paises.index" class="btn btn-warning">Volver al menú país</a>
+        <a href="?route=paises.index" class="btn btn-warning">Volver al menú </a>
     </form>
 </div>
 
