@@ -24,9 +24,8 @@ if ($requestPath !== $publicBase && !str_starts_with($requestPath, $publicBase .
 
 require_once __DIR__ .  '/../Common/ClassLoader.php'; 
 require_once __DIR__ .  '/../Common/DependencyInjection.php';
-require_once __DIR__ . '/../INFRAESTRUCTURA/Entrypoints/Web/Presentation/View.php'; 
-require_once __DIR__ . '/../INFRAESTRUCTURA/Entrypoints/Web/Presentation/Flash.php'; 
- 
+require_once __DIR__ . '/../Infraestructure/Entrypoints/Web/Presentation/View.php'; 
+require_once __DIR__ . '/../Infraestructure/Entrypoints/Web/Presentation/Flash.php'; 
 
 
 DependencyInjection::boot(); 
@@ -396,6 +395,3 @@ $errors['role'] = 'El rol es obligatorio.';
  return $errors; 
 } 
 
-
-require_once __DIR__ .  '/../Infrastructure/Entrypoints/Web/Presentation/Views/auth/login.php';
-exit;

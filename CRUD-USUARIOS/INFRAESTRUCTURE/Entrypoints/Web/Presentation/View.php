@@ -1,44 +1,42 @@
-<?php 
+<?php
 
 
 
-declare(strict_types=1); 
+declare(strict_types=1);
 
 
 
-final class View 
+
+final class View
 
 
-{ 
 
-      public static function render(string $template, array $data = array()): void 
-
-
-         { 
-
-             $file = __DIR__ . '/ ' . $template . '.php'; 
+{
+      public static function render(string $template, array $data = array()): void
+ {
 
 
-              if (!file_exists($file)) { 
-                  throw new RuntimeException('Vista no encontrada: ' . $template); 
 
-             } 
-                extract($data, EXTR_SKIP); 
-               require $file; 
-
-
-             } 
-            
-            public static function redirect(string $route): void 
-
-               { 
+ 
+ 
+ 
+ $file = __DIR__ . '/Views/' . $template . '.php';
 
 
-                  header('Location: ?route=' . urlencode($route)); 
-                  exit; 
+        if (!file_exists($file)) {
+ throw new RuntimeException('Vista no encontrada: ' . $template);
 
 
-   } 
+
+ }
+      extract($data, EXTR_SKIP);
+      require $file;
+ }
 
 
+       public static function redirect(string $route): void
+ {
+     header('Location: ?route=' . urlencode($route));
+      exit;
+ }
 }
