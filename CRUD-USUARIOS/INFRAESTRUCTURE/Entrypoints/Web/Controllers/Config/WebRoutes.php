@@ -13,6 +13,7 @@ final class WebRoutes
         'users.index'=>array('method'=>'GET','action'=>'index'),
         'users.store'=> array('method'=>'POST','action'=>'store'),
         'auth.login' => array('method'=>'GET','action'=>'login'),
+        'auth.authenticate' => array('method'=>'POST','action'=>'authenticate'),
 
 
 

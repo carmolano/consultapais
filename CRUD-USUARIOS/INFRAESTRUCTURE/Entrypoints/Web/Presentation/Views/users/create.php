@@ -3,7 +3,7 @@
 
 
 
-<h1>Registrar el usuario mol </h1> 
+<h1>Registrar el usuario </h1> 
 
 
 <?php if (!empty($message)): ?> 
