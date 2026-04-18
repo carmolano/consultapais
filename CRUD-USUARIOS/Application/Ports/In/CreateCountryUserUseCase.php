@@ -7,8 +7,8 @@ require_once __DIR__ . '/../../Services/Dto/Commands/CreateUserCommand.php';
 require_once __DIR__ . '/../../../Domain/Models/UserModel.php';
 
 
-interface CreateUserUseCase
+interface CreateCountryUserUseCase
 
 {
-    public function execute(CreateUserCommand $command): UserModel;
+    public function execute(CreateCountryUserUseCase $command): UserModel;
 }
