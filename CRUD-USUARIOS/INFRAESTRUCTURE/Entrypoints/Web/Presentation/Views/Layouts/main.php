@@ -27,7 +27,7 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label class="form-label">Contraseña</label>
+                    <label class="form-label">agrega tu Contraseña</label>
                     <input type="password" name="password" class="form-control" placeholder="••••••••" required>
                 </div>
                 

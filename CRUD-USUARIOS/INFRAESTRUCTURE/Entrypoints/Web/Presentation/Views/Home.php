@@ -99,8 +99,8 @@
 
 <div class="container my-5">
     <div class="hero-section">
-        <h1>✨ Menú Principal</h1>
-        <p>Bienvenido al sistema de gestión de usuarios. Accede a las operaciones que necesites.</p>
+        <h1> Menú Principal</h1>
+        <p>Bienvenido al sistema de gestión de usuarios.</p>
     </div>
 
     <div class="alert-container">
@@ -121,13 +121,13 @@
         <div class="crud-card">
             <div class="icon">➕</div>
             <h3>Crear Usuario</h3>
-            <p>Registra un nuevo usuario en el sistema</p>
+            <p>Registra un nuevo usuario en la consulta pais</p>
             <a href="?route=users.create">Registrar</a>
         </div>
 
         <div class="crud-card">
             <div class="icon">📋</div>
-            <h3>Listar Usuarios</h3>
+            <h3>Validar Usuarios</h3>
             <p>Consulta todos los usuarios registrados</p>
             <a href="?route=users.index">Ver Lista</a>
         </div>
@@ -135,7 +135,7 @@
         <div class="crud-card">
             <div class="icon">✏️</div>
             <h3>Editar Usuario</h3>
-            <p>Modifica la información de usuarios existentes</p>
+            <p>editar la información de usuarios existentes</p>
             <a href="?route=users.index">Editar</a>
         </div>
 
@@ -144,6 +144,13 @@
             <h3>Eliminar Usuario</h3>
             <p>Elimina usuarios del sistema</p>
             <a href="?route=users.index">Gestionar</a>
+        </div>
+
+        <div class="crud-card">
+            <div class="icon">🌎</div>
+            <h3>Menú País</h3>
+            <p>Accede a la sección de países para ver y administrar datos.</p>
+            <a href="?route=paises.index">Ir a País</a>
         </div>
     </div>
 </div>

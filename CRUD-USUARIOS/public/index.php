@@ -184,6 +184,41 @@ case 'login':
 )); 
 break; 
 
+case 'paises.index':
+      View::render('paises/index', array(
+                 'pageTitle' => 'Menú País', 
+                 'message' => Flash::message(), 
+                 'success' => Flash::success(), 
+      ));
+      break;
+
+case 'paises.create':
+      View::render('paises/create', array(
+                 'pageTitle' => 'Agregar País', 
+                 'message' => Flash::message(), 
+                 'success' => Flash::success(), 
+                 'old' => Flash::old(),
+      ));
+      break;
+
+case 'paises.store':
+      $data = array(
+          'nombre' => trim((string) ($_POST['nombre'] ?? '')),
+          'habitantes' => trim((string) ($_POST['habitantes'] ?? '')),
+          'democracia' => trim((string) ($_POST['democracia'] ?? '')),
+      );
+
+      if ($data['nombre'] === '' || $data['habitantes'] === '' || $data['democracia'] === '') {
+          Flash::setErrors(array('general' => 'Completa todos los campos.'));
+          Flash::setOld($data);
+          Flash::setMessage('Por favor completa todos los campos.');
+          View::redirect('paises.create');
+      }
+
+      Flash::setSuccess('País agregado correctamente.');
+      View::redirect('paises.index');
+      break;
+
 case 'authenticate':
     // Código de autenticación aquí
     // Por ahora, redirigir a home
