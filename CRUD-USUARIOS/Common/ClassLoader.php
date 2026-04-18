@@ -59,12 +59,12 @@ final class ClassLoader
  'Connection' => 'Infraestructure/Adapters/Persistence/MySQL/Config/Connection.php', 
  'UserPersistenceDto' => '  Infraestructure/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php', 
  'UserEntity' => 'Infraestructure/Adapters/Persistence/MySQL/Entity/UserEntity.php', 
- 'UserPersistenceMapper' => 'Infraesructure/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php', 'UserRepositoryMySQL' => 'INFRAESTRUCTURE/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php', 
+ 'UserPersistenceMapper' => 'Infraestructure/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php', 'UserRepositoryMySQL' => 'Infraestructure/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php', 
 
 
  'CreateUserWebRequest' => 'Infraestructure/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
  'UpdateUserWebRequest' => 'Infraestructure/Entrypoints/Web/Controllers/Dto/UpdateUserRequest.php', 
- 'UserResponse' => 'IInfraestructure/Entrypoints/Web/Controllers/Dto/UserResponse.php', 
+ 'UserResponse' => 'Infraestructure/Entrypoints/Web/Controllers/Dto/UserResponse.php', 
  'UserWebMapper' => 'Infraestructure/Entrypoints/Web/Controllers/Mapper/UserWebMapper.php', 
  'UserController' => 'Infraestructure/Entrypoints/Web/Controllers/UserController.php', 
  'WebRoutes' => 'Infraestructure/Entrypoints/Web/Controllers/Config/WebRoutes.php',
@@ -75,29 +75,28 @@ final class ClassLoader
 'Flash' => 'Infraestructure/Entrypoints/Web/Presentation/Flash.php', 
 
  'DependencyInjection' => 'Common/DependencyInjection.php',
- 'PaisModel' => 'Pais/Domain/Models/PaisModel.php',
- 'nombrePais' => 'Pais/Domain/ValueObjects/NombrePais.php',
- 'PaisInvalidDataExeption' => 'Pais/Domain/Exeptions/PaisInvalidDataExeptions.php',
+ 'PaisModel' => 'Domain/Models/PaisModel.php',
+ 'nombrePais' => 'Domain/ValueObjects/NombrePais.php',
+ 'PaisInvalidDataExeption' => 'Domain/Exceptions/PaisInvalidDataExeptions.php',
 
- 'paisRepository' => 'Pais/Application/ports/out/PiasRepository.php',
- 'paisService' => 'Pais/Application/Services/PiasService.php',
+ 'paisRepository' => 'Application/Ports/Out/PaisRepository.php',
+ 'paisService' => 'Application/Services/PaisService.php',
 
-   'PaisEntity' => 'Pais/Infrastructure/Adapters/Persistence/MySQL/Entity/PaisEntity.php',
-  'PaisPersistenceMapper' => 'Pais/Infrastructure/Adapters/Persistence/MySQL/Mapper/PaisPersistenceMapper.php',
-  'PaisRepositoryMySQL' => 'Pais/Infrastructure/Adapters/Persistence/MySQL/Repository/PaisRepositoryMySQL.php',
+   'PaisEntity' => 'Infraestructure/Adapters/Persistence/MySQL/Entity/PaisEntity.php',
+  'PaisPersistenceMapper' => 'Infraestructure/Adapters/Persistence/MySQL/Mapper/PaisPersistenceMapper.php',
+  'PaisRepositoryMySQL' => 'Infraestructure/Adapters/Persistence/MySQL/Repository/PaisRepositoryMySQL.php',
 
-  'PaisController' => 'Pais/Infrastructure/Entrypoints/Web/Controllers/PaisController.php',
-  'PaisWebMapper' => 'Pais/Infrastructure/Entrypoints/Web/Controllers/Mapper/PaisWebMapper.php',
+  'PaisController' => 'Infraestructure/Entrypoints/Web/Controllers/PaisController.php',
+  'PaisWebMapper' => 'Infraestructure/Entrypoints/Web/Controllers/Mapper/PaisWebMapper.php',
 
-  'InvalidCredentialsExceptions'=>'Domain/Exeptions/InvalidCredentialsExeptions.php',
+  'InvalidCredentialsException'=>'Domain/Exceptions/InvalidCredentialsException.php',
   'LoginUseCase'=>'Application/Ports/In/LoginUseCase.php',
-  'loginCommand'=>'Applicatio/Services/Dto/Commands/LoginCommand.php',
+  'LoginCommand'=>'Application/Services/Dto/Commands/LoginCommand.php',
   'LoginService'=>'Application/Services/LoginService.php',
-  'LoginWebRequest'=>'INFRAESTRUCTURE/Entrypoints/Web/Controllers/Dto/LoginWebRequest.php',
+  'LoginWebRequest'=>'Infraestructure/Entrypoints/Web/Controllers/Dto/LoginWebRequest.php',
 
   'loginUseCase'=>'Application/Ports/In/LoginUseCase.php',
-  'loginService'=>'Applications/Services/LoginService.php',
-  'LoginCommand'=>'Application/Services/Dto/Commands/LoginCommand.php',
+  'loginService'=>'Application/Services/LoginService.php',
   'LoginCommand' => 'Application/Services/Dto/Commands/LoginCommand.php',
 
  ); 

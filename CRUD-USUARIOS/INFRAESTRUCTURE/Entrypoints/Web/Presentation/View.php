@@ -13,44 +13,39 @@ final class View
 
 {
       public static function render(string $template, array $data = array()): void
-        {
-
-
-             $file = __DIR__ . '/Views/' . $template . '.php';
+ {
 
 
 
+ 
+ 
+ 
+$baseDir = __DIR__ . '/Views/';
 
-             if (!file_exists($file)) {
-               $file = __DIR__ . '/Views/users/' . $template . '.php';
-          
-                }
+ $file = $baseDir . $template . '.php'; 
 
 
 
         if (!file_exists($file)) {
-               throw new RuntimeException('La vista "' . $template . '" no se encontró en: ' . $file);
+            $file = $baseDir . 'Layouts/' . $template . '.php';
+            if (!file_exists($file)) {
+                throw new RuntimeException('Vista no encontrada: ' . $template);
             }
 
 
 
-              
-
-                 extract($data, EXTR_SKIP);
-                 include $file;    
-
-                 
-            }
+ }
+      extract($data, EXTR_SKIP);
+      require $file;
+ }
 
 
-            public static function redirect(string $routeName): void
-            {
-                header('Location: ?route=' . $routeName);
-                exit;
-            }           
-
-
+     public static function redirect(string $route): void 
+   {
+    header("Location: index.php?route={$route}");
+    exit;
+   }
 }
-      
+
 
     

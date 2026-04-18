@@ -184,6 +184,41 @@ case 'login':
 )); 
 break; 
 
+case 'paises.index':
+      View::render('paises/index', array(
+                 'pageTitle' => 'Menú País', 
+                 'message' => Flash::message(), 
+                 'success' => Flash::success(), 
+      ));
+      break;
+
+case 'paises.create':
+      View::render('paises/create', array(
+                 'pageTitle' => 'Agregar País', 
+                 'message' => Flash::message(), 
+                 'success' => Flash::success(), 
+                 'old' => Flash::old(),
+      ));
+      break;
+
+case 'paises.store':
+      $data = array(
+          'nombre' => trim((string) ($_POST['nombre'] ?? '')),
+          'habitantes' => trim((string) ($_POST['habitantes'] ?? '')),
+          'democracia' => trim((string) ($_POST['democracia'] ?? '')),
+      );
+
+      if ($data['nombre'] === '' || $data['habitantes'] === '' || $data['democracia'] === '') {
+          Flash::setErrors(array('general' => 'Completa todos los campos.'));
+          Flash::setOld($data);
+          Flash::setMessage('Por favor completa todos los campos.');
+          View::redirect('paises.create');
+      }
+
+      Flash::setSuccess('País agregado correctamente.');
+      View::redirect('paises.index');
+      break;
+
 case 'authenticate':
     // Código de autenticación aquí
     // Por ahora, redirigir a home
@@ -254,8 +289,8 @@ if ($forgotEmail === '' || !filter_var($forgotEmail, FILTER_VALIDATE_EMAIL)) {
 
        case 'auth.authenticate': 
             Flash::setOld(array('email' => trim(strtolower((string) ($_POST['email'] ?? ''))))); 
-            View::redirect('auth.login'); 
-            break; 
+            header('Location: index.php?route=home');
+            exit; 
 
     case 'auth.forgot.send': 
            Flash::setOld(array('email' => trim((string) ($_POST['email'] ?? '')))); 

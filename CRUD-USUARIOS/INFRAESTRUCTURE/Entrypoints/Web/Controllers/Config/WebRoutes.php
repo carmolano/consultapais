@@ -13,10 +13,10 @@ final class WebRoutes
         'users.index'=>array('method'=>'GET','action'=>'index'),
         'users.store'=> array('method'=>'POST','action'=>'store'),
         'auth.login' => array('method'=>'GET','action'=>'login'),
-        'auth.authenticate' => array('method'=>'POST','action'=>'authenticate'),
-
-
-
+        'auth.authenticate' => array('method' => 'POST','action'=>'authenticate'),
+        'paises.index' => array('method' => 'GET','action'=>'paises.index'),
+        'paises.create' => array('method' => 'GET','action'=>'paises.create'),
+        'paises.store' => array('method' => 'POST','action'=>'paises.store'),
     );
   }
 

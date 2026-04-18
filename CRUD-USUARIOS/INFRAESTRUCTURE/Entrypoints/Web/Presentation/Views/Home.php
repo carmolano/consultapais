@@ -1,165 +1,158 @@
 <?php require __DIR__ . '/layouts/header.php'; ?> 
 <?php require __DIR__ . '/layouts/menu.php'; ?>
 
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        margin-bottom: 40px;
+        border-radius: 10px;
+    }
 
+    .hero-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>mi sistema</title>
+    .hero-section p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    .crud-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
 
-    <style>
-    body { 
-        font-family: Arial, sans-serif; 
-         margin: 30px; 
-         background-color: #FFFF00;
+    .crud-card {
+        background: white;
+        border-radius: 8px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 5px solid #667eea;
+    }
 
-       } 
+    .crud-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
 
-         nav a { 
-              margin-right: 12px; 
-           } .alert-error { 
+    .crud-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
 
-               margin: 12px 0; 
-               padding: 10px; 
-               border: 1px solid #d33; 
-               background: #3a12a8; 
+    .crud-card h3 {
+        margin-bottom: 10px;
+        color: #333;
+    }
 
+    .crud-card p {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
 
-        } 
-              .alert-success { 
-                    margin: 12px 0; 
-                    padding: 10px; 
-                    border: 1px solid #2d8a34; 
-                    background: #eaf8ec; 
+    .crud-card a {
+        display: inline-block;
+        background: #667eea;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
 
-        } 
-          .field-error { 
-                  color: #c00;
-                 font-size: 0.9rem;
-      }
+    .crud-card a:hover {
+        background: #764ba2;
+    }
 
-               .form-group { 
-                     margin-bottom: 14px; 
-      } 
-            label { 
-                   display: inline-block; 
-                   margin-bottom: 4px; 
-        } 
-          input { 
-              min-width: 280px; 
-              padding: 6px; 
-       } 
-         
-             button { 
-              padding: 8px 14px; 
-     
-           } 
-              select { 
-                     min-width: 280px; 
-                     padding: 6px; 
-           } 
-               table { 
+    .alert-container {
+        margin-bottom: 30px;
+    }
 
-               border-collapse: collapse; 
+    .alert-error {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+        padding: 12px 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
 
-            } 
+    .alert-success {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+        padding: 12px 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+</style>
 
-              table th, table td { 
-                  padding: 8px 12px; 
-                  border: 1px solid #ccc; 
-                  text-align: left; 
-           
-            } 
-                table.detail-table th { 
-                       background: #f5f5f5; 
-                        width: 140px; 
-              
-                    } 
-                       
-                      .btn { 
-            
-                            display: inline-block; 
-                            padding: 5px 12px; 
-                            text-decoration: none; 
-                            cursor: pointer;  
-                            border: none; 
-                            border-radius: 3px; 
-                            font-size: 0.9rem; 
-                             background: #e0e0e0; 
-                             color: #333; 
-                  }
-                    .btn-primary { background: #0066cc; color: #fff; } 
-                    .btn-primary:hover { background: #0052a3; }
+<div class="container my-5">
+    <div class="hero-section">
+        <h1> consulta pais</h1>
+        <p>Sistema de gestion de usuario pais.</p>
+    </div>
 
+    <div class="alert-container">
+        <?php if (!empty($message)): ?> 
+            <div class="alert-error"> 
+                <strong>⚠️ Aviso:</strong> <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?> 
+            </div> 
+        <?php endif; ?> 
 
+        <?php if (!empty($success)): ?> 
+            <div class="alert-success"> 
+                <strong>✓ Éxito:</strong> <?= htmlspecialchars($success, ENT_QUOTES, 'UTF-8') ?> 
+            </div> 
+        <?php endif; ?> 
+    </div>
 
+    <div class="crud-cards">
+        <div class="crud-card">
+            <div class="icon"></div>
+            <h3>Crear Usuario</h3>
+            <p>Registra un nuevo usuario en la consulta pais</p>
+            <a href="?route=users.create">Registrar</a>
+        </div>
 
-              .btn-warning { background: #e68a00; color: #fff; } 
-              .btn-warning:hover { background: #cc7a00; } 
-              .btn-danger { background: #cc2200; color: #fff; } 
-              .btn-danger:hover { background: #aa1a00; } 
-              .btn-sm { padding: 3px 8px; font-size: 0.8rem; } 
+        <div class="crud-card">
+            <div class="icon"></div>
+            <h3>Validar Usuarios</h3>
+            <p>Consulta todos los usuarios registrados</p>
+            <a href="?route=users.index">Ver Lista</a>
+        </div>
 
-              .auth-box { 
-                     max-width: 420px; 
-                     margin: 40px auto; 
-                     padding: 28px; border: 
-                     1px solid #ddd; 
-                     border-radius: 6px; 
-                     background: #fafafa; 
-          
-        } 
+        <div class="crud-card">
+            <div class="icon"></div>
+            <h3>Editar Usuario</h3>
+            <p>editar la información </p>
+            <a href="?route=users.index">Editar</a>
+        </div>
 
+        <div class="crud-card">
+            <div class="icon"></div>
+            <h3>Eliminar Usuario</h3>
+            <p>Elimina usuarios </p>
+            <a href="?route=users.index">Gestionar</a>
+        </div>
 
-
-        </style>
-    </head>     
-
-<body>
-
-<div style=  "display: flex; flex-direction: column; align-items: center; justify-content: center;">
-  <h1 style ="color:#721c24; margin-bottom: 20px;"> ConsultaPais</h1>
-
-
-    <div class="menu-box">
-        <h2 style="font-size: 1.6rem; color: #333;">Menú Principal del Sistema</h2>
-        <p class="text-muted">Sistema de Gestión de información geográfica y demográfica</p>
-
-        <ul>
-            <li>
-                <span class="badge-letter">C</span>
-                <a class="crud-link" href="?route=countries.create">Registrar País (Presidente, Himno, etc.)</a>
-            </li>
-            <li>
-                <span class="badge-letter">R</span>
-                <a class="crud-link" href="?route=countries.search">Consultar por Continente o Idioma</a>
-            </li>
-            <li>
-                <span class="badge-letter">U</span>
-                <a class="crud-link" href="?route=countries.update">Actualizar Habitantes y Municipios</a>
-            </li>
-            <li>
-                <span class="badge-letter">D</span>
-                <a class="crud-link" href="?route=countries.delete">Eliminar registro de la base de datos</a>
-            </li>
-            <li>
-                <span class="badge-letter">L</span>
-                <a class="crud-link" href="?route=countries.list">Listado Global (Democracia y Universidades)</a>
-            </li>
-        </ul>
-
-        <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-            <a href="?route=auth.login" style="color: #dc3545; text-decoration: none; font-weight: bold;">← Cerrar sesión</a>
+        <div class="crud-card">
+            <div class="icon"></div>
+            <h3>Menú País</h3>
+            <p>Acceder.</p>
+            <a href="?route=paises.index">Ir a País</a>
         </div>
     </div>
 </div>
 
-
-</body>
-</html>
-
-    <?php require __DIR__ . '/layouts/footer.php'; ?>
+<?php require __DIR__ . '/layouts/footer.php'; ?>
